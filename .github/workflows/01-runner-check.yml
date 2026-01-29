@@ -1,0 +1,19 @@
+name: 01 - Runner Connectivity Check
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  runner-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print runner details
+        run: |
+          echo "Runner OS        : $RUNNER_OS"
+          echo "Runner Name      : $RUNNER_NAME"
+          echo "Repository       : $GITHUB_REPOSITORY"
+          echo "Branch Ref       : $GITHUB_REF"
+          echo "Commit SHA       : $GITHUB_SHA"
